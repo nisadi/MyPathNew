@@ -52,7 +52,7 @@ const JobApplyForm = ({ job, onClose }) => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
+              className="w-full px-4 py-2 border text-[#000000] border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#bfcad2]"
             />
           </div>
 
@@ -64,7 +64,7 @@ const JobApplyForm = ({ job, onClose }) => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
+              className="w-full px-4 py-2 border text-[#000000] border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
             />
           </div>
 
@@ -76,14 +76,14 @@ const JobApplyForm = ({ job, onClose }) => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
+              className="w-full px-4 py-2 border text-[#000000] border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-[#0d161b] mb-1">Resume/CV*</label>
             <div className="flex items-center">
-              <label className="cursor-pointer bg-[#e7eef3] hover:bg-[#d0dde8] px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+              <label className="cursor-pointer bg-[#8dbddf] hover:bg-[#d0dde8] px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                 Upload File
                 <input
                   type="file"
@@ -108,7 +108,7 @@ const JobApplyForm = ({ job, onClose }) => {
             value={formData.coverLetter}
             onChange={handleChange}
             rows="4"
-            className="w-full px-4 py-2 border border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
+            className="w-full px-4 py-2 border text-[#000000] border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
             placeholder="Write a brief cover letter explaining why you're a good fit for this position..."
           />
         </div>
@@ -121,7 +121,7 @@ const JobApplyForm = ({ job, onClose }) => {
               name="portfolio"
               value={formData.portfolio}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
+              className="w-full px-4 py-2 border text-[#000000] border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
               placeholder="https://"
             />
           </div>
@@ -133,7 +133,7 @@ const JobApplyForm = ({ job, onClose }) => {
               name="linkedin"
               value={formData.linkedin}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
+              className="w-full px-4 py-2 border text-[#000000] border-[#e7eef3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4c799a]"
               placeholder="https://linkedin.com/in/your-profile"
             />
           </div>
