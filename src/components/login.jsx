@@ -17,7 +17,7 @@ const LoginPage = () => {
             <input
               type="text"
               placeholder="Enter your username"
-              className="w-full px-4 py-3 rounded-lg border border-[#cfdde7] bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#128ee7] focus:border-transparent placeholder:text-[#4c799a]"
+              className="w-full px-4 py-3 rounded-lg border text-[#000000] border-[#cfdde7] bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#128ee7] focus:border-transparent placeholder:text-[#4c799a]"
             />
           </div>
 
@@ -27,7 +27,7 @@ const LoginPage = () => {
             <input
               type="password"
               placeholder="Enter your password"
-              className="w-full px-4 py-3 rounded-lg border border-[#cfdde7] bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#128ee7] focus:border-transparent placeholder:text-[#4c799a]"
+              className="w-full px-4 py-3 rounded-lg border text-[#000000] border-[#cfdde7] bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#128ee7] focus:border-transparent placeholder:text-[#4c799a]"
             />
           </div>
 
