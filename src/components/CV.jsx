@@ -19,6 +19,7 @@ const CVBuilder = () => {
     "Teacher",
     "Accountant",
     "Graphic Designer",
+    "Other",
   ];
 
   const handleStartBuilding = () => {
