@@ -24,7 +24,7 @@ const SignUpForm = () => {
               <label className="block text-[#0d161b] text-sm font-medium mb-1">Full Name</label>
               <input
                 placeholder="Enter your full name"
-                className="w-full px-4 py-3 rounded-lg bg-[#e7eef3] placeholder:text-[#4c799a] focus:outline-none focus:ring-2 focus:ring-[#128ee7]"
+                className="w-full px-4 py-3 rounded-lg text-[#000000] bg-[#e7eef3] placeholder:text-[#4c799a] focus:outline-none focus:ring-2 focus:ring-[#128ee7]"
               />
             </div>
 
@@ -33,7 +33,7 @@ const SignUpForm = () => {
               <label className="block text-[#0d161b] text-sm font-medium mb-1">Email</label>
               <input
                 placeholder="Enter your email"
-                className="w-full px-4 py-3 rounded-lg bg-[#e7eef3] placeholder:text-[#4c799a] focus:outline-none focus:ring-2 focus:ring-[#128ee7]"
+                className="w-full px-4 py-3 rounded-lg text-[#000000] bg-[#e7eef3] placeholder:text-[#4c799a] focus:outline-none focus:ring-2 focus:ring-[#128ee7]"
               />
             </div>
 
@@ -41,7 +41,7 @@ const SignUpForm = () => {
             <div>
               <label className="block text-[#0d161b] text-sm font-medium mb-1">Educational Background</label>
               <select
-                className="w-full px-4 py-3 rounded-lg bg-[#e7eef3] bg-[image:--select-button-svg] bg-no-repeat bg-[center_right_1rem] appearance-none focus:outline-none focus:ring-2 focus:ring-[#128ee7]"
+                className="w-full px-4 py-3 rounded-lg text-[#101946] bg-[#e7eef3] bg-[image:--select-button-svg] bg-no-repeat bg-[center_right_1rem] appearance-none focus:outline-none focus:ring-2 focus:ring-[#128ee7]"
               >
                 <option value="">Select your educational background</option>
                 <option value="highschool">High School</option>
@@ -57,7 +57,7 @@ const SignUpForm = () => {
               <input
                 type="password"
                 placeholder="Create a password"
-                className="w-full px-4 py-3 rounded-lg bg-[#e7eef3] placeholder:text-[#4c799a] focus:outline-none focus:ring-2 focus:ring-[#128ee7]"
+                className="w-full px-4 py-3 rounded-lg text-[#000000] bg-[#e7eef3] placeholder:text-[#4c799a] focus:outline-none focus:ring-2 focus:ring-[#128ee7]"
               />
             </div>
 
@@ -67,7 +67,7 @@ const SignUpForm = () => {
               <input
                 type="password"
                 placeholder="Confirm your password"
-                className="w-full px-4 py-3 rounded-lg bg-[#e7eef3] placeholder:text-[#4c799a] focus:outline-none focus:ring-2 focus:ring-[#128ee7]"
+                className="w-full px-4 py-3 rounded-lg text-[#000000] bg-[#e7eef3] placeholder:text-[#4c799a] focus:outline-none focus:ring-2 focus:ring-[#128ee7]"
               />
             </div>
 
