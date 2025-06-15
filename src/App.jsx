@@ -6,15 +6,12 @@ import Header from './components/header';
 import Footer from './components/footer'; 
 import CV from './components/CV';
 import CVEditor from './components/CVEditor';
-<<<<<<< HEAD
 import JobBoard from './components/JobBoard';
 
-=======
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowLeft, faDownload } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowLeft, faDownload);
->>>>>>> a682acddf91f73522790d77eb53db8f64f516413
 
 function App() {
   return (
@@ -23,14 +20,12 @@ function App() {
 
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="/resources" element={<CV/>}/>
-          <Route path="/cv-editor" element={<CVEditor/>}/>
-          <Route path="/careers" element={<JobBoard/>}/>
-          
-     
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/resources" element={<CV />} />
+          <Route path="/cv-editor" element={<CVEditor />} />
+          <Route path="/careers" element={<JobBoard />} />
         </Routes>
       </main>
       
