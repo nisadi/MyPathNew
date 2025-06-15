@@ -7,7 +7,7 @@ import Footer from './components/footer';
 import CV from './components/CV';
 import CVEditor from './components/CVEditor';
 import JobBoard from './components/JobBoard';
-
+import Cources from './components/Cources';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowLeft, faDownload } from '@fortawesome/free-solid-svg-icons';
 
@@ -26,6 +26,7 @@ function App() {
           <Route path="/resources" element={<CV />} />
           <Route path="/cv-editor" element={<CVEditor />} />
           <Route path="/careers" element={<JobBoard />} />
+          <Route path="/courses" element={<Cources />} />
         </Routes>
       </main>
       
