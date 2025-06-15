@@ -5,7 +5,7 @@ import Success3 from '../src/assets/group.jpg'
 
 const home = () => {
   return (  
-        <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50">
+        <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50 mt-16">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div className="@container">
               <div className="@[480px]:p-4">

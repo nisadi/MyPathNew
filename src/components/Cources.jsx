@@ -91,7 +91,7 @@ const CareerHub = () => {
   const careerPaths = [...new Set(courses.map(course => course.careerPath))];
 
   return (
-    <div className="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style={{ fontFamily: 'Lexend, "Noto Sans", sans-serif' }}>
+    <div className="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden mt-16" style={{ fontFamily: 'Lexend, "Noto Sans", sans-serif' }}>
       {/* Main Content */}
       <div className="px-40 flex flex-1 justify-center py-5">
         <div className="layout-content-container flex flex-col max-w-[960px] flex-1">

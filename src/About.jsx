@@ -7,7 +7,7 @@ import ContactInfo from './components/ContactInfo';
 
 function About() {
   return (   
-        <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50">
+        <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50 mt-16">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div className="flex flex-wrap justify-between gap-3 p-4">
               <p className="text-[#0a354b] tracking-light text-[32px] font-bold leading-tight min-w-72">About MyPath</p>

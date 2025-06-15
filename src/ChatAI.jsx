@@ -119,7 +119,7 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style={{ fontFamily: 'Lexend, "Noto Sans", sans-serif' }}>
+    <div className="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden mt-16" style={{ fontFamily: 'Lexend, "Noto Sans", sans-serif' }}>
       <div className="layout-container flex h-full grow flex-col">
 
         <div className="px-40 flex flex-1 justify-center py-5">

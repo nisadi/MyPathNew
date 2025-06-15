@@ -19,9 +19,9 @@ const JobBoard = () => {
   // Job Card Component
   const JobCard = ({ featured, title, company, imageUrl }) => {
     return (
-      <div className="p-4">
-        <div className="flex items-stretch justify-between gap-4 rounded-lg bg-slate-50 p-4 shadow-[0_0_4px_rgba(0,0,0,0.1)]">
-          <div className="flex flex-[2_2_0px] flex-col gap-4">
+      <div className="p-4  ">
+        <div className="flex items-stretch justify-between gap-4 rounded-lg bg-slate-50 p-4 shadow-[0_0_4px_rgba(0,0,0,0.1)]  ">
+          <div className="flex flex-[2_2_0px] flex-col gap-4  ">
             <div className="flex flex-col gap-1">
               {featured && <p className="text-[#4c799a] text-sm font-normal leading-normal">Featured</p>}
               <p className="text-[#0d161b] text-base font-bold leading-tight">{title}</p>
@@ -29,7 +29,7 @@ const JobBoard = () => {
             </div>
             <button
               onClick={() => handleApplyClick(title, company)}
-              className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#e7eef3] text-[#0d161b] text-sm font-medium leading-normal w-fit hover:bg-[#d0dde8] transition-colors"
+              className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#e7eef3] text-[#0d161b] text-sm font-medium leading-normal w-fit hover:bg-[#d0dde8] transition-colors "
             >
               <span className="truncate">Apply Now</span>
             </button>
@@ -47,7 +47,7 @@ const JobBoard = () => {
     <div className="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style={{ fontFamily: '"Public Sans", "Noto Sans", sans-serif' }}>
       {/* Job Application Form Modal */}
       {showApplyForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 ">
           <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <JobApplyForm job={selectedJob} onClose={handleCloseForm} />
           </div>
