@@ -6,15 +6,12 @@ import Header from './components/header';
 import Footer from './components/footer'; 
 import CV from './components/CV';
 import CVEditor from './components/CVEditor';
-<<<<<<< Updated upstream
 import JobBoard from './components/JobBoard';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowLeft, faDownload } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowLeft, faDownload);
-=======
->>>>>>> Stashed changes
 
 function App() {
   return (
