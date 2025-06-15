@@ -84,7 +84,7 @@ function Contact() {
                 </div>
                 <div className="flex flex-col justify-center">
                     <p className="text-[#0d161b] text-base font-medium leading-normal line-clamp-1">Email</p>
-                    <p className="text-[#4c7b9a] text-sm font-normal leading-normal line-clamp-2">support@careerconnect.lk</p>
+                    <p className="text-[#4c7b9a] text-sm font-normal leading-normal line-clamp-2">info@mypath.lk</p>
                 </div>
             </div>
 
