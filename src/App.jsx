@@ -6,6 +6,10 @@ import Header from './components/header';
 import Footer from './components/footer'; 
 import CV from './components/CV';
 import CVEditor from './components/CVEditor';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowLeft, faDownload } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faArrowLeft, faDownload);
 
 function App() {
   return (

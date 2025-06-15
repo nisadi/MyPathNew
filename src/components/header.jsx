@@ -25,7 +25,7 @@ function Header() {
             </Link>
             
             <Link to="/resources" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">
-              Resources
+              CV Builder
             </Link>
 
             <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">
