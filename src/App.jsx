@@ -28,6 +28,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+           <Route path="/ChatAI" element={<Chat />} />
           <Route path="/resources" element={<CV />} />
           <Route path="/cv-editor" element={<CVEditor />} />
           <Route path="/careers" element={<JobBoard />} />
