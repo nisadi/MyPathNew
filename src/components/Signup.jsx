@@ -10,9 +10,10 @@ const SignUpForm = () => {
         '--select-button-svg': 'url(\'data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(76,121,154)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e\')'
       }}
     >
-      <div className="w-full max-w-md mx-auto p-6">
+      {/* Increased container width from max-w-md to max-w-lg */}
+      <div className="w-full max-w-xl mx-auto p-6">
         {/* Form Container */}
-        
+        <div className="bg-white rounded-2xl shadow-lg p-8 w-full">
           {/* Title */}
           <h2 className="text-[#0d161b] text-2xl font-bold text-center mb-6">Create Your Account</h2>
           
@@ -71,19 +72,19 @@ const SignUpForm = () => {
             </div>
 
             {/* Sign Up Button */}
-            <button  className="w-full py-3 px-4 bg-[#128ee7] text-white font-bold rounded-lg hover:bg-[#0d7bc7] transition-colors mt-6">
+            <button className="w-full py-3 px-4 bg-[#128ee7] text-white font-bold rounded-lg hover:bg-[#0d7bc7] transition-colors mt-6">
               Sign Up
             </button>
 
             {/* Login Link */}
             <p className="text-[#4c799a] text-sm text-center mt-4">
               Already have an account?{' '}
-              <Link to="/login.jsx" className="text-blue-500 hover:text-blue-700 font-medium">
+              <Link to="/login" className="text-blue-500 hover:text-blue-700 font-medium">
                 Login
               </Link>
             </p>
           </div>
-      
+        </div>
       </div>
     </div>
   );
