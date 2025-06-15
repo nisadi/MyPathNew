@@ -8,9 +8,9 @@ const CVBuilder = () => {
   const navigate = useNavigate();
 
   const templates = [
-    { id: 1, name: "Modern", image: "/images/modern-template.jpg" },
-    { id: 2, name: "Classic", image: "/images/classic-template.jpg" },
-    { id: 3, name: "Creative", image: "/images/creative-template.jpg" },
+    { id: 1, name: "Modern", image: "/src/assets/modern.jpg" },
+    { id: 2, name: "Classic", image: "/src/assets/classic.jpg" },
+    { id: 3, name: "Creative", image: "/src/assets/creative.jpg" },
   ];
 
   const examples = [
