@@ -57,7 +57,7 @@ const CVEditor = () => {
 
       // Create canvas with higher quality
       const canvas = await html2canvas(input, {
-        scale: 3, // Triple the resolution for better quality
+        scale: 3,
         logging: false,
         useCORS: true,
         scrollY: -window.scrollY,
@@ -68,17 +68,14 @@ const CVEditor = () => {
       // Restore the download button
       if (downloadButton) downloadButton.style.visibility = 'visible';
 
-      // Calculate PDF dimensions
+      // Create PDF with proper dimensions
       const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL('image/png');
       const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      
-      // Calculate image dimensions to fit PDF
-      const imgWidth = pdfWidth;
-      const imgHeight = (canvas.height * pdfWidth) / canvas.width;
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
       // Add image to PDF
-      pdf.addImage(canvas.toDataURL('image/png', 1), 'PNG', 0, 0, imgWidth, imgHeight);
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
 
       // Generate filename
       const fileName = `CV_${cvData.personalInfo.name || 'MyCV'}_${new Date().toISOString().slice(0, 10)}.pdf`;
@@ -117,44 +114,44 @@ const CVEditor = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Personal Info */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Personal Information</h3>
+              <h3 className="text-lg font-semibold text-black">Personal Information</h3>
               <input 
                 type="text" 
                 placeholder="Full Name" 
                 value={cvData.personalInfo.name}
                 onChange={(e) => handleInputChange('personalInfo', 'name', e.target.value)}
-                className="w-full p-2 border rounded" 
+                className="w-full p-2 border rounded text-black" 
               />
               <input 
                 type="email" 
                 placeholder="Email" 
                 value={cvData.personalInfo.email}
                 onChange={(e) => handleInputChange('personalInfo', 'email', e.target.value)}
-                className="w-full p-2 border rounded" 
+                className="w-full p-2 border rounded text-black" 
               />
               <input 
                 type="tel" 
                 placeholder="Phone" 
                 value={cvData.personalInfo.phone}
                 onChange={(e) => handleInputChange('personalInfo', 'phone', e.target.value)}
-                className="w-full p-2 border rounded" 
+                className="w-full p-2 border rounded text-black" 
               />
               <input 
                 type="text" 
                 placeholder="Address" 
                 value={cvData.personalInfo.address}
                 onChange={(e) => handleInputChange('personalInfo', 'address', e.target.value)}
-                className="w-full p-2 border rounded" 
+                className="w-full p-2 border rounded text-black" 
               />
             </div>
 
             {/* Education */}
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <h3 className="text-lg font-semibold">Education</h3>
+                <h3 className="text-lg font-semibold text-black">Education</h3>
                 <button 
                   onClick={() => addEntry('education')}
-                  className="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded"
+                  className="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded text-black"
                 >
                   Add Education
                 </button>
@@ -170,7 +167,7 @@ const CVEditor = () => {
                       updated[index].institution = e.target.value;
                       setCvData({ ...cvData, education: updated });
                     }} 
-                    className="w-full p-2 border rounded" 
+                    className="w-full p-2 border rounded text-black" 
                   />
                   <input 
                     type="text" 
@@ -181,7 +178,7 @@ const CVEditor = () => {
                       updated[index].degree = e.target.value;
                       setCvData({ ...cvData, education: updated });
                     }} 
-                    className="w-full p-2 border rounded" 
+                    className="w-full p-2 border rounded text-black" 
                   />
                   <input 
                     type="text" 
@@ -192,7 +189,7 @@ const CVEditor = () => {
                       updated[index].year = e.target.value;
                       setCvData({ ...cvData, education: updated });
                     }} 
-                    className="w-full p-2 border rounded" 
+                    className="w-full p-2 border rounded text-black" 
                   />
                 </div>
               ))}
@@ -201,10 +198,10 @@ const CVEditor = () => {
             {/* Experience */}
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <h3 className="text-lg font-semibold">Work Experience</h3>
+                <h3 className="text-lg font-semibold text-black">Work Experience</h3>
                 <button 
                   onClick={() => addEntry('experience')}
-                  className="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded"
+                  className="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded text-black"
                 >
                   Add Experience
                 </button>
@@ -220,7 +217,7 @@ const CVEditor = () => {
                       updated[index].company = e.target.value;
                       setCvData({ ...cvData, experience: updated });
                     }} 
-                    className="w-full p-2 border rounded" 
+                    className="w-full p-2 border rounded text-black" 
                   />
                   <input 
                     type="text" 
@@ -231,7 +228,7 @@ const CVEditor = () => {
                       updated[index].position = e.target.value;
                       setCvData({ ...cvData, experience: updated });
                     }} 
-                    className="w-full p-2 border rounded" 
+                    className="w-full p-2 border rounded text-black" 
                   />
                   <input 
                     type="text" 
@@ -242,7 +239,7 @@ const CVEditor = () => {
                       updated[index].duration = e.target.value;
                       setCvData({ ...cvData, experience: updated });
                     }} 
-                    className="w-full p-2 border rounded" 
+                    className="w-full p-2 border rounded text-black" 
                   />
                   <textarea 
                     placeholder="Description" 
@@ -252,7 +249,7 @@ const CVEditor = () => {
                       updated[index].description = e.target.value;
                       setCvData({ ...cvData, experience: updated });
                     }} 
-                    className="w-full p-2 border rounded" 
+                    className="w-full p-2 border rounded text-black" 
                     rows="3" 
                   />
                 </div>
@@ -261,11 +258,11 @@ const CVEditor = () => {
 
             {/* Skills */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Skills</h3>
+              <h3 className="text-lg font-semibold text-black">Skills</h3>
               <div className="flex flex-wrap gap-2">
                 {cvData.skills.map((skill, index) => (
                   <div key={index} className="flex items-center bg-gray-200 px-3 py-1 rounded">
-                    <span>{skill}</span>
+                    <span className="text-black">{skill}</span>
                     <button 
                       onClick={() => {
                         const updated = [...cvData.skills];
@@ -289,7 +286,7 @@ const CVEditor = () => {
                       e.target.value = '';
                     }
                   }} 
-                  className="flex-grow p-2 border rounded-l" 
+                  className="flex-grow p-2 border rounded-l text-black" 
                 />
                 <button 
                   onClick={(e) => {
@@ -331,8 +328,6 @@ const CVEditor = () => {
               font-family: 'Arial', sans-serif;
               color: #444;
             }
-
-            
           `}</style>
 
           <header className="mb-8">
@@ -382,7 +377,7 @@ const CVEditor = () => {
               <h2 className="text-xl font-bold border-b-2 border-gray-300 pb-1 mb-4">Skills</h2>
               <div className="flex flex-wrap gap-2">
                 {cvData.skills.map((skill, index) => (
-                  <span key={index} className="bg-gray-200 px-3 py-1 rounded">
+                  <span key={index} className="bg-gray-200 px-3 py-1 rounded text-black">
                     {skill}
                   </span>
                 ))}
