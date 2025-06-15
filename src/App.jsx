@@ -10,6 +10,8 @@ import CV from './components/CV';
 import CVEditor from './components/CVEditor';
 import JobBoard from './components/JobBoard';
 import Cources from './components/Cources';
+import Signup from './components/Signup';
+import Login from './components/login';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowLeft, faDownload } from '@fortawesome/free-solid-svg-icons';
 
@@ -26,10 +28,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+           <Route path="/ChatAI" element={<Chat />} />
           <Route path="/resources" element={<CV />} />
           <Route path="/cv-editor" element={<CVEditor />} />
           <Route path="/careers" element={<JobBoard />} />
           <Route path="/courses" element={<Cources />} />
+           <Route path="/signup" element={<Signup />} />
+           <Route path="/login" element={< Login />} />
         </Routes>
         </Layout>
       </main>
