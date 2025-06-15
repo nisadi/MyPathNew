@@ -63,19 +63,17 @@ const CareerHub = () => {
     }
   ];
 
-  const filteredCourses = courses.filter(course => {
-    // Search filter
-    const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                         course.description.toLowerCase().includes(searchTerm.toLowerCase());
+   const filteredCourses = courses.filter(course => {
+    const matchesSearch = searchTerm === '' || 
+      course.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      course.description.toLowerCase().includes(searchTerm.toLowerCase());
     
-    // Industry filter
     const matchesIndustry = !filter.industry || course.industry === filter.industry;
-    
-    // Career path filter
     const matchesCareerPath = !filter.careerPath || course.careerPath === filter.careerPath;
     
     return matchesSearch && matchesIndustry && matchesCareerPath;
   });
+
 
   const enrollInCourse = (course) => {
     setCurrentCourse(course);
@@ -97,12 +95,22 @@ const CareerHub = () => {
       {/* Main Content */}
       <div className="px-40 flex flex-1 justify-center py-5">
         <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-          {/* Title Section */}
+          {/* Title and Search Section */}
           <div className="flex flex-wrap justify-between gap-3 p-4">
             <div className="flex min-w-72 flex-col gap-3">
               <p className="text-[#111518] tracking-light text-[32px] font-bold leading-tight">Courses & Workshops</p>
               <p className="text-[#5d7689] text-sm font-normal leading-normal">Enhance your skills with our curated courses and workshops.</p>
             </div>
+
+            <div className="flex-1 max-w-md">
+            <input
+              type="text"
+              placeholder="Search courses..."
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
           </div>
 
           {/* Filter Buttons */}
@@ -112,10 +120,10 @@ const CareerHub = () => {
                 className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#eaeef1] pl-4 pr-2 hover:bg-[#d0d8e0] transition-colors"
                 onClick={() => setFilter({...filter, industry: null})}
               >
-                <p className="text-[#111518] text-sm font-medium leading-normal">
+                <p className="text-[#ffffff] text-sm font-medium leading-normal">
                   {filter.industry ? `Industry: ${filter.industry}` : "All Industries"}
                 </p>
-                <div className="text-[#111518]">
+                <div className="text-[#ffffff]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
                   </svg>
@@ -143,10 +151,10 @@ const CareerHub = () => {
                 className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#eaeef1] pl-4 pr-2 hover:bg-[#d0d8e0] transition-colors"
                 onClick={() => setFilter({...filter, careerPath: null})}
               >
-                <p className="text-[#111518] text-sm font-medium leading-normal">
+                <p className="text-[#ffffff] text-sm font-medium leading-normal">
                   {filter.careerPath ? `Career Path: ${filter.careerPath}` : "All Career Paths"}
                 </p>
-                <div className="text-[#111518]">
+                <div className="text-[#ffffff]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
                   </svg>
@@ -239,7 +247,7 @@ const CareerHub = () => {
           </div>
         </div>
       )}
-    </div>
+     </div>
   );
 };
 
