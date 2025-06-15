@@ -6,8 +6,15 @@ import Header from './components/header';
 import Footer from './components/footer'; 
 import CV from './components/CV';
 import CVEditor from './components/CVEditor';
+<<<<<<< HEAD
 import JobBoard from './components/JobBoard';
 
+=======
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowLeft, faDownload } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faArrowLeft, faDownload);
+>>>>>>> a682acddf91f73522790d77eb53db8f64f516413
 
 function App() {
   return (
