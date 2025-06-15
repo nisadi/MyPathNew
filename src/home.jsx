@@ -1,131 +1,130 @@
 import React from 'react';
-import Success1 from '../src/assets/woman3.jpg'
-import Success2 from '../src/assets/man.jpg'
-import Success3 from '../src/assets/group.jpg'
+import { Link, useNavigate } from 'react-router-dom';
+import Success1 from '../src/assets/woman3.jpg';
+import Success2 from '../src/assets/man.jpg';
+import Success3 from '../src/assets/group.jpg';
 
-const home = () => {
+const Home = () => {
+  const navigate = useNavigate();
+
   return (  
-        <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50">
-          <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div className="@container">
-              <div className="@[480px]:p-4">
-                <div
-                    className="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
-                    style={{backgroundImage: 'linear-gradient(rgba(0, 60, 103, 0.3), rgba(0, 60, 103, 1))',}}
-                    >
-
-                  <div className="flex flex-col gap-2 text-center">
-                    <h1
-                      className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                    >
-                      Unlock Your Potential
-                    </h1>
-                    <h2 className="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                      Explore courses and careers tailored to your skills and interests. Connect with opportunities in Sri Lanka's evolving job market.
-                    </h2>
+    <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50">
+      <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
+        <div className="@container">
+          <div className="@[480px]:p-4">
+            <div
+              className="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+              style={{backgroundImage: 'linear-gradient(rgba(0, 60, 103, 0.3), rgba(0, 60, 103, 1))'}}
+            >
+              <div className="flex flex-col gap-2 text-center">
+                <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                  Unlock Your Potential
+                </h1>
+                <h2 className="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                  Explore courses and careers tailored to your skills and interests. Connect with opportunities in Sri Lanka's evolving job market.
+                </h2>
+              </div>
+              <label className="flex flex-col min-w-40 h-14 w-full max-w-[480px] @[480px]:h-16">
+                <div className="flex w-full flex-1 items-stretch rounded-xl h-full">
+                  <div className="text-[#4e7997] flex border border-[#d0dde7] bg-slate-50 items-center justify-center pl-[15px] rounded-l-xl border-r-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                    </svg>
                   </div>
-                  <label className="flex flex-col min-w-40 h-14 w-full max-w-[480px] @[480px]:h-16">
-                    <div className="flex w-full flex-1 items-stretch rounded-xl h-full">
-                      <div
-                        className="text-[#4e7997] flex border border-[#d0dde7] bg-slate-50 items-center justify-center pl-[15px] rounded-l-xl border-r-0"
-                        data-icon="MagnifyingGlass"
-                        data-size="20px"
-                        data-weight="regular"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                          <path
-                            d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
-                          ></path>
-                        </svg>
-                      </div>
-                      <input
-                        placeholder="Search courses or careers"
-                        className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e151b] focus:outline-0 focus:ring-0 border border-[#d0dde7] bg-slate-50 focus:border-[#d0dde7] h-full placeholder:text-[#4e7997] px-[15px] rounded-r-none border-r-0 pr-2 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
-                        value=""
-                      />
-                      <div className="flex items-center justify-center rounded-r-xl border-l-0 border border-[#d0dde7] bg-slate-50 pr-[7px]">
-                        <button
-                          className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-                        >
-                          <span className="truncate">Search</span>
-                        </button>
-                      </div>
-                    </div>
-                  </label>
+                  <input
+                    placeholder="Search courses or careers"
+                    className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e151b] focus:outline-0 focus:ring-0 border border-[#d0dde7] bg-slate-50 focus:border-[#d0dde7] h-full placeholder:text-[#4e7997] px-[15px] rounded-r-none border-r-0 pr-2 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
+                    value=""
+                  />
+                  <div className="flex items-center justify-center rounded-r-xl border-l-0 border border-[#d0dde7] bg-slate-50 pr-[7px]">
+                    <button
+                      className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                    >
+                      <span className="truncate">Search</span>
+                    </button>
+                  </div>
                 </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <h2 className="text-[#0e151b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Success Stories</h2>
+        <div className="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex items-stretch p-4 gap-3">
+            {/* Card 1 */}
+            <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+              <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col overflow-hidden">
+                <img src={Success1} alt="Ayesha" className="w-full h-full object-cover"/>
+              </div>
+              <div>
+                <p className="text-[#0e151b] text-base font-medium leading-normal">Ayesha's Journey</p>
+                <p className="text-[#4e7997] text-sm font-normal leading-normal">
+                  Ayesha, a recent graduate, found her dream job in marketing through CareerConnect's personalized career path.
+                </p>
               </div>
             </div>
-            <h2 className="text-[#0e151b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Success Stories</h2>
-            <div className="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <div className="flex items-stretch p-4 gap-3">
-                {/* Card 1 */}
-                <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
-                <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col overflow-hidden">
-                    <img src={Success1} alt="Ayesha" className="w-full h-full object-cover"/>
-                </div>
-                <div>
-                    <p className="text-[#0e151b] text-base font-medium leading-normal">Ayesha's Journey</p>
-                    <p className="text-[#4e7997] text-sm font-normal leading-normal">
-                        Ayesha, a recent graduate, found her dream job in marketing through CareerConnect's personalized career path.
-                    </p>
-                </div>
-                </div>
-                
-                {/* Card 2 */}
-                <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
-                <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col overflow-hidden">
-                    <img src={Success2} alt="Rohan" className="w-full h-full object-cover"/>
-                </div>
-                <div>
-                    <p className="text-[#0e151b] text-base font-medium leading-normal">Rohan's Success</p>
-                    <p className="text-[#4e7997] text-sm font-normal leading-normal">
-                    Rohan, a skilled technician, advanced his career with a specialized course recommended by CareerConnect.
-                    </p>
-                </div>
-                </div>
-                
-                {/* Card 3 */}
-                <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
-                <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col overflow-hidden">
-                    <img src={Success3} alt="Group" className="w-full h-full object-cover"/>
-                </div>
-                <div>
-                    <p className="text-[#0e151b] text-base font-medium leading-normal">The Future Leaders</p>
-                    <p className="text-[#4e7997] text-sm font-normal leading-normal">
-                    A group of students utilized CareerConnect to explore various career options and plan their educational paths.
-                    </p>
-                </div>
-                </div>
+            
+            {/* Card 2 */}
+            <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+              <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col overflow-hidden">
+                <img src={Success2} alt="Rohan" className="w-full h-full object-cover"/>
+              </div>
+              <div>
+                <p className="text-[#0e151b] text-base font-medium leading-normal">Rohan's Success</p>
+                <p className="text-[#4e7997] text-sm font-normal leading-normal">
+                  Rohan, a skilled technician, advanced his career with a specialized course recommended by CareerConnect.
+                </p>
+              </div>
             </div>
+            
+            {/* Card 3 */}
+            <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+              <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col overflow-hidden">
+                <img src={Success3} alt="Group" className="w-full h-full object-cover"/>
+              </div>
+              <div>
+                <p className="text-[#0e151b] text-base font-medium leading-normal">The Future Leaders</p>
+                <p className="text-[#4e7997] text-sm font-normal leading-normal">
+                  A group of students utilized CareerConnect to explore various career options and plan their educational paths.
+                </p>
+              </div>
             </div>
-            <div className="@container">
-              <div className="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
-                <div className="flex flex-col gap-5 text-center">
-                    <h1 className="text-[#0e151b] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">
-                        Ready to Start Your Journey?
-                    </h1>
-                    </div>
-                <div className="flex flex-1 justify-center">
-                  <div className="flex justify-center">
-                    <div className="flex flex-1 gap-3 flex-wrap max-w-[480px] justify-center">
-                      <button
-                        className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow"
-                      >
-                        <span className="truncate">Explore Courses</span>
-                      </button>
-                      <button
-                        className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 text-[#ffffff] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow"
-                      >
-                        <span className="truncate">Discover Careers</span>
-                      </button>
-                    </div>
-                  </div>
+          </div>
+        </div>
+        
+        <div className="@container">
+          <div className="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
+            <div className="flex flex-col gap-5 text-center">
+              <h1 className="text-[#0e151b] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">
+                Ready to Start Your Journey?
+              </h1>
+            </div>
+            <div className="flex flex-1 justify-center">
+              <div className="flex justify-center">
+                <div className="flex flex-1 gap-3 flex-wrap max-w-[480px] justify-center">
+                  <Link to="/courses">
+                    <button
+                      className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow"
+                    >
+                      <span className="truncate">Explore Courses</span>
+                    </button>
+                  </Link>
+                  <Link to="/careers">
+                    <button
+                      className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow"
+                    >
+                      <span className="truncate">Discover Careers</span>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
   );
 };
 
-export default home;
+export default Home;
