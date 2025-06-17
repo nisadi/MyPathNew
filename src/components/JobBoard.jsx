@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import JobApplyForm from './JobApplyForm';
+import Header from './Header'; // Import the Header component
 
 const JobBoard = () => {
   const [showApplyForm, setShowApplyForm] = useState(false);
@@ -29,7 +30,7 @@ const JobBoard = () => {
             </div>
             <button
               onClick={() => handleApplyClick(title, company)}
-              className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#e7eef3] text-[#0d161b] text-sm font-medium leading-normal w-fit hover:bg-[#d0dde8] transition-colors"
+              className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#e7eef3] text-[#0d161b] text-sm font-medium leading-normal w-fit hover:bg-[#d0dde8] transition-colors"
             >
               <span className="truncate">Apply Now</span>
             </button>
@@ -44,7 +45,10 @@ const JobBoard = () => {
   };
 
   return (
-    <div className="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style={{ fontFamily: '"Public Sans", "Noto Sans", sans-serif' }}>
+    <div className="relative flex size-full min-h-screen flex-col bg-slate-50 overflow-x-hidden" style={{ fontFamily: '"Public Sans", "Noto Sans", sans-serif' }}>
+      {/* Header Component */}
+      <Header />
+      
       {/* Job Application Form Modal */}
       {showApplyForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
@@ -54,7 +58,7 @@ const JobBoard = () => {
         </div>
       )}
 
-      <div className="layout-container flex h-full grow flex-col">
+      <div className="layout-container flex h-full grow flex-col mt-16"> {/* Added mt-16 to account for header height */}
         <div className="px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div className="flex flex-wrap justify-between gap-3 p-4">
@@ -70,9 +74,6 @@ const JobBoard = () => {
                 <div className="flex w-full flex-1 items-stretch rounded-lg h-full">
                   <div
                     className="text-[#4c799a] flex border-none bg-[#e7eef3] items-center justify-center pl-4 rounded-l-lg border-r-0"
-                    data-icon="MagnifyingGlass"
-                    data-size="24px"
-                    data-weight="regular"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
@@ -92,24 +93,24 @@ const JobBoard = () => {
             {/* Filter Buttons */}
             <div className="flex gap-3 p-3 flex-wrap pr-4">
               <button className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eef3] pl-4 pr-2">
-                <p className="text-[#ffffff] text-sm font-medium leading-normal">Location</p>
-                <div className="text-[#ffffff]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                <p className="text-[#white] text-sm font-medium leading-normal">Location</p>
+                <div className="text-[#white]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
                   </svg>
                 </div>
               </button>
               <button className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eef3] pl-4 pr-2">
-                <p className="text-[#ffffff] text-sm font-medium leading-normal">Industry</p>
-                <div className="text-[#ffffff]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                <p className="text-[#white] text-sm font-medium leading-normal">Industry</p>
+                <div className="text-[#white]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
                   </svg>
                 </div>
               </button>
               <button className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eef3] pl-4 pr-2">
-                <p className="text-[#ffffff] text-sm font-medium leading-normal">Skills</p>
-                <div className="text-[#ffffff]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                <p className="text-[#white] text-sm font-medium leading-normal">Skills</p>
+                <div className="text-[#white]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
                   </svg>
@@ -158,7 +159,7 @@ const JobBoard = () => {
             {/* Pagination */}
             <div className="flex items-center justify-center p-4">
               <a href="#" className="flex size-10 items-center justify-center">
-                <div className="text-[#0d161b]" data-icon="CaretLeft" data-size="18px" data-weight="regular">
+                <div className="text-[#0d161b]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
                   </svg>
@@ -170,7 +171,7 @@ const JobBoard = () => {
               <span className="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#0d161b] rounded-full">...</span>
               <a className="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#0d161b] rounded-full" href="#">10</a>
               <a href="#" className="flex size-10 items-center justify-center">
-                <div className="text-[#0d161b]" data-icon="CaretRight" data-size="18px" data-weight="regular">
+                <div className="text-[#0d161b]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
                   </svg>

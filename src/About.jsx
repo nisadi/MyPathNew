@@ -7,7 +7,7 @@ import ContactInfo from './components/ContactInfo';
 
 function About() {
   return (   
-        <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50">
+        <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50 mt-16">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div className="flex flex-wrap justify-between gap-3 p-4">
               <p className="text-[#0a354b] tracking-light text-[32px] font-bold leading-tight min-w-72">About MyPath</p>
@@ -91,7 +91,7 @@ function About() {
             <h2 className="text-[#0a354b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Impact Stories</h2>
             <div className="p-4">
               <SuccessStory
-                image="https://lh3.googleusercontent.com/aida-public/AB6AXuD1RC-msQnP5-PoiBmJbni6507cOZsBv1QmQw1p8wVRud8KEim3cSpkZlt5imCBNfcN4L_BB9owefqROXYOjzv0mt1pdGwC5xFkoRfq6Tw8SMGdiFCCEwIKM9-PXG1sX5Bl8in5jtKDOuduOSoFm5Gqw4_e3KiP35_dc4AdhMZMELtD3VDc7AqzQfW38nGCl-39mOt8BA68MRB5tK0wnniM-vJr1WRZLSp-kO1rC3XMXz2hRSLOjFpEzOg1AVrPUxB06M3BMUJsWPHm"
+                image="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
                 tag="Success Story"
                 title="From Dropout to Dream Job"
                 description="After struggling to find direction, Sanjeewa used CareerConnect to discover his passion for technology. He completed a skills training program and landed a job at a leading tech company."
@@ -99,7 +99,7 @@ function About() {
             </div>
             <div className="p-4">
               <SuccessStory
-                image="https://lh3.googleusercontent.com/aida-public/AB6AXuBGNKnF3EWWYYf0XF7b5nEyeaynv22AIYKP4cs99qhBuE4KHrGjOcZZ92MIfCbOg9zOrslId33_HUvauOhUCdgPCYPAVyxEwAEUa0aSMcMPjwV7ZIIws2jLpU0NChalNoicGytcMX_Bhz2vhgMhOXF7HEl1vcrT7sg3GB57YAoPV5tNa5-E_39CcNP3kMR2RThPEzh_1Kq67W0u-5r7LKNCW56fFSP37ooeg1Ia5u-GHplab9cUvYki1qomg9uWY_oQtXV8O7sPG1dJ"
+                image="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                 tag="Success Story"
                 title="Career Change at 40"
                 description="Nirmala, a former teacher, felt unfulfilled in her career. With CareerConnect's guidance, she transitioned into a new role in project management, finding renewed purpose and satisfaction."
@@ -109,7 +109,7 @@ function About() {
             
             <h2 className="text-[#0a354b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contact Us</h2>
             <div className="p-4 grid grid-cols-[20%_1fr] gap-x-6">
-              <ContactInfo label="Email" value="info@careerconnect.lk" />
+              <ContactInfo label="Email" value="info@mypath.lk" />
               <ContactInfo label="Phone" value="+94 77 123 4567" />
               <ContactInfo label="Social Media" value="Facebook, LinkedIn, Twitter" />
             </div>

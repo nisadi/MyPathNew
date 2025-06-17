@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Success1 from '../src/assets/woman3.jpg';
-import Success2 from '../src/assets/man.jpg';
-import Success3 from '../src/assets/group.jpg';
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (  
-    <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50">
+    <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50 mt-16">
       <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
         <div className="@container">
           <div className="@[480px]:p-4">
@@ -52,10 +49,14 @@ const Home = () => {
         <h2 className="text-[#0e151b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Success Stories</h2>
         <div className="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="flex items-stretch p-4 gap-3">
-            {/* Card 1 */}
+            {/* Card 1 - Sri Lankan Businesswoman */}
             <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
               <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col overflow-hidden">
-                <img src={Success1} alt="Ayesha" className="w-full h-full object-cover"/>
+                <img 
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                  alt="Sri Lankan businesswoman" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-[#0e151b] text-base font-medium leading-normal">Ayesha's Journey</p>
@@ -65,10 +66,14 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Card 2 */}
+            {/* Card 2 - Sri Lankan IT Professional */}
             <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
               <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col overflow-hidden">
-                <img src={Success2} alt="Rohan" className="w-full h-full object-cover"/>
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
+                  alt="Sri Lankan IT professional" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-[#0e151b] text-base font-medium leading-normal">Rohan's Success</p>
@@ -78,10 +83,14 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Card 3 */}
+            {/* Card 3 - Sri Lankan Students */}
             <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
               <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col overflow-hidden">
-                <img src={Success3} alt="Group" className="w-full h-full object-cover"/>
+                <img 
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" 
+                  alt="Group of Sri Lankan students" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-[#0e151b] text-base font-medium leading-normal">The Future Leaders</p>

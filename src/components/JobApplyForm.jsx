@@ -27,8 +27,8 @@ const JobApplyForm = ({ job, onClose }) => {
   };
 
   return (
-    <div className="p-6">
-      <div className="flex justify-between items-center mb-6">
+    <div className="p-6 ">
+      <div className="flex justify-between items-center mb-6 ">
         <h2 className="text-2xl font-bold text-[#0d161b]">Apply for {job?.title}</h2>
         <button 
           onClick={onClose}

@@ -7,7 +7,7 @@ function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="flex items-center justify-between border-b border-solid border-amber-50 px-10 py-3 w-full bg-blue-50">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b border-solid border-amber-50 px-10 py-3 w-full bg-blue-50">
       <div className="flex items-center gap-9">
         <img src={logo} alt="logo" width={48} height={48} />
         <Link to="/" className="[&_h2]:hover:no-underline">

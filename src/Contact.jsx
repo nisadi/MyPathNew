@@ -21,7 +21,7 @@ function Contact() {
     };
 
   return (
-    <div className="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style={{ fontFamily: '"Public Sans", "Noto Sans", sans-serif' }}>
+    <div className="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden mt-16" style={{ fontFamily: '"Public Sans", "Noto Sans", sans-serif' }}>
       <div className="layout-container flex h-full grow flex-col">
         <div className="px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
@@ -84,7 +84,7 @@ function Contact() {
                 </div>
                 <div className="flex flex-col justify-center">
                     <p className="text-[#0d161b] text-base font-medium leading-normal line-clamp-1">Email</p>
-                    <p className="text-[#4c7b9a] text-sm font-normal leading-normal line-clamp-2">support@careerconnect.lk</p>
+                    <p className="text-[#4c7b9a] text-sm font-normal leading-normal line-clamp-2">info@mypath.lk</p>
                 </div>
             </div>
 
