@@ -205,7 +205,7 @@ const Chatbot = () => {
                     onChange={(e) => setInputMessage(e.target.value)}
                     disabled={isLoading}
                   />
-                  <div className="flex border-none bg-[#e7eef3] items-center justify-center pr-4 rounded-r-xl border-l-0 !pr-2">
+                  <div className="flex border-none bg-[#e7eef3] items-center justify-center pr-4 rounded-r-xl border-l-0">
                     <div className="flex items-center gap-4 justify-end">
                       <button
                         type="submit"
