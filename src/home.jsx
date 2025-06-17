@@ -18,7 +18,10 @@ const Home = () => {
                   Unlock Your Potential
                 </h1>
                 <h2 className="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                  Explore courses and careers tailored to your skills and interests. Connect with opportunities in Sri Lanka's evolving job market.
+                  Explore courses and careers tailored to your skills and interests. 
+                </h2>
+                <h2 className="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                 Connect with opportunities in Sri Lanka's evolving job market.
                 </h2>
               </div>
               <label className="flex flex-col min-w-40 h-14 w-full max-w-[480px] @[480px]:h-16">
