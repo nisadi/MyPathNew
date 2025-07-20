@@ -1,11 +1,26 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import JobApplyForm from './JobApplyForm';
-import Header from './Header'; // Import the Header component
+import Header from './Header';
 
 const JobBoard = () => {
   const [showApplyForm, setShowApplyForm] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filters, setFilters] = useState({
+    location: null,
+    industry: null,
+    skills: null
+  });
+  const [showDropdown, setShowDropdown] = useState({
+    location: false,
+    industry: false,
+    skills: false
+  });
+
+  const locations = ['Colombo', 'Kandy', 'Galle', 'Jaffna', 'Negombo'];
+  const industries = ['Technology', 'Marketing', 'Finance', 'Healthcare', 'Education'];
+  const skills = ['JavaScript', 'Python', 'Design', 'Management', 'Communication'];
 
   const handleApplyClick = (jobTitle, company) => {
     setSelectedJob({ title: jobTitle, company });
@@ -17,11 +32,27 @@ const JobBoard = () => {
     setSelectedJob(null);
   };
 
+  const toggleDropdown = (filterType) => {
+    setShowDropdown(prev => ({
+      ...Object.fromEntries(Object.keys(prev).map(key => [key, false])),
+      [filterType]: !prev[filterType]
+    }));
+  };
+
+  const selectFilter = (filterType, value) => {
+    setFilters(prev => ({ ...prev, [filterType]: value }));
+    setShowDropdown(prev => ({ ...prev, [filterType]: false }));
+  };
+
+  const clearFilter = (filterType) => {
+    setFilters(prev => ({ ...prev, [filterType]: null }));
+  };
+
   // Job Card Component
   const JobCard = ({ featured, title, company, imageUrl }) => {
     return (
       <div className="p-4">
-        <div className="flex items-stretch justify-between gap-4 rounded-lg bg-slate-50 p-4 shadow-[0_0_4px_rgba(0,0,0,0.1)]">
+        <div className="flex items-stretch justify-between gap-4 rounded-lg bg-slate-50 p-4 shadow-[0_0_4px_rgba(0,0,0,0.1)] hover:shadow-md transition-shadow">
           <div className="flex flex-[2_2_0px] flex-col gap-4">
             <div className="flex flex-col gap-1">
               {featured && <p className="text-[#4c799a] text-sm font-normal leading-normal">Featured</p>}
@@ -58,8 +89,8 @@ const JobBoard = () => {
         </div>
       )}
 
-      <div className="layout-container flex h-full grow flex-col mt-16"> {/* Added mt-16 to account for header height */}
-        <div className="px-40 flex flex-1 justify-center py-5">
+      <div className="layout-container flex h-full grow flex-col mt-16">
+        <div className="px-4 md:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div className="flex flex-wrap justify-between gap-3 p-4">
               <div className="flex min-w-72 flex-col gap-3">
@@ -72,19 +103,16 @@ const JobBoard = () => {
             <div className="px-4 py-3">
               <label className="flex flex-col min-w-40 h-12 w-full">
                 <div className="flex w-full flex-1 items-stretch rounded-lg h-full">
-                  <div
-                    className="text-[#4c799a] flex border-none bg-[#e7eef3] items-center justify-center pl-4 rounded-l-lg border-r-0"
-                  >
+                  <div className="text-[#4c799a] flex border-none bg-[#e7eef3] items-center justify-center pl-4 rounded-l-lg border-r-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
-                      ></path>
+                      <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
                     </svg>
                   </div>
                   <input
                     placeholder="Search for jobs by title, skill, or company"
                     className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d161b] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none h-full placeholder:text-[#4c799a] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
-                    value=""
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
               </label>
@@ -92,30 +120,137 @@ const JobBoard = () => {
             
             {/* Filter Buttons */}
             <div className="flex gap-3 p-3 flex-wrap pr-4">
-              <button className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eef3] pl-4 pr-2">
-                <p className="text-[#white] text-sm font-medium leading-normal">Location</p>
-                <div className="text-[#white]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-                  </svg>
-                </div>
-              </button>
-              <button className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eef3] pl-4 pr-2">
-                <p className="text-[#white] text-sm font-medium leading-normal">Industry</p>
-                <div className="text-[#white]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-                  </svg>
-                </div>
-              </button>
-              <button className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eef3] pl-4 pr-2">
-                <p className="text-[#white] text-sm font-medium leading-normal">Skills</p>
-                <div className="text-[#white]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-                  </svg>
-                </div>
-              </button>
+              {/* Location Filter */}
+              <div className="relative">
+                <button 
+                  className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eef3] pl-4 pr-2 hover:bg-[#d0dde8] transition-colors"
+                  onClick={() => toggleDropdown('location')}
+                >
+                  <p className="text-[#ffff] text-sm font-medium leading-normal">
+                    {filters.location ? `Location: ${filters.location}` : "Location"}
+                  </p>
+                  <div className="text-[#0d161b]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                    </svg>
+                  </div>
+                </button>
+                {showDropdown.location && (
+                  <div className="absolute z-10 mt-1 w-48 rounded-md bg-white shadow-lg border border-gray-200">
+                    <div className="py-1">
+                      {filters.location && (
+                        <button
+                          className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left"
+                          onClick={() => clearFilter('location')}
+                        >
+                          Clear Filter
+                        </button>
+                      )}
+                      {locations.map((location, i) => (
+                        <button
+                          key={i}
+                          className={`block w-full px-4 py-2 text-sm text-left ${
+                            filters.location === location 
+                              ? 'bg-blue-100 text-blue-800' 
+                              : 'text-gray-700 hover:bg-gray-100'
+                          }`}
+                          onClick={() => selectFilter('location', location)}
+                        >
+                          {location}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Industry Filter */}
+              <div className="relative">
+                <button 
+                  className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eef3] pl-4 pr-2 hover:bg-[#d0dde8] transition-colors"
+                  onClick={() => toggleDropdown('industry')}
+                >
+                  <p className="text-[#ffff] text-sm font-medium leading-normal">
+                    {filters.industry ? `Industry: ${filters.industry}` : "Industry"}
+                  </p>
+                  <div className="text-[#0d161b]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                    </svg>
+                  </div>
+                </button>
+                {showDropdown.industry && (
+                  <div className="absolute z-10 mt-1 w-48 rounded-md bg-white shadow-lg border border-gray-200">
+                    <div className="py-1">
+                      {filters.industry && (
+                        <button
+                          className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left"
+                          onClick={() => clearFilter('industry')}
+                        >
+                          Clear Filter
+                        </button>
+                      )}
+                      {industries.map((industry, i) => (
+                        <button
+                          key={i}
+                          className={`block w-full px-4 py-2 text-sm text-left ${
+                            filters.industry === industry 
+                              ? 'bg-blue-100 text-blue-800' 
+                              : 'text-gray-700 hover:bg-gray-100'
+                          }`}
+                          onClick={() => selectFilter('industry', industry)}
+                        >
+                          {industry}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Skills Filter */}
+              <div className="relative">
+                <button 
+                  className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eef3] pl-4 pr-2 hover:bg-[#d0dde8] transition-colors"
+                  onClick={() => toggleDropdown('skills')}
+                >
+                  <p className="text-[#ffff] text-sm font-medium leading-normal">
+                    {filters.skills ? `Skills: ${filters.skills}` : "Skills"}
+                  </p>
+                  <div className="text-[#0d161b]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                    </svg>
+                  </div>
+                </button>
+                {showDropdown.skills && (
+                  <div className="absolute z-10 mt-1 w-48 rounded-md bg-white shadow-lg border border-gray-200">
+                    <div className="py-1">
+                      {filters.skills && (
+                        <button
+                          className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left"
+                          onClick={() => clearFilter('skills')}
+                        >
+                          Clear Filter
+                        </button>
+                      )}
+                      {skills.map((skill, i) => (
+                        <button
+                          key={i}
+                          className={`block w-full px-4 py-2 text-sm text-left ${
+                            filters.skills === skill 
+                              ? 'bg-blue-100 text-blue-800' 
+                              : 'text-gray-700 hover:bg-gray-100'
+                          }`}
+                          onClick={() => selectFilter('skills', skill)}
+                        >
+                          {skill}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
             
             {/* Featured Jobs Section */}
