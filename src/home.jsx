@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Home = () => {
   const navigate = useNavigate();
 
-  return (  
+  return (
     <div className="px-40 flex flex-1 justify-center py-5 w-full min-h-screen bg-slate-50 mt-16">
       <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
         <div className="@container">
@@ -19,10 +19,10 @@ const Home = () => {
                 loop
                 playsInline
               >
-                <source src="src\assets\video1.mp4" type="video/mp4" />
+                <source src="src/assets/video1.mp4" type="video/mp4" />
               </video>
 
-              {/* Overlay for readability */}
+              {/* Overlay */}
               <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-900/30 to-blue-900/80 z-10" />
 
               {/* Hero Content */}
@@ -49,9 +49,7 @@ const Home = () => {
                     value=""
                   />
                   <div className="flex items-center justify-center rounded-r-xl border-l-0 border border-[#d0dde7] bg-slate-50 pr-[7px]">
-                    <button
-                      className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-                    >
+                    <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
                       <span className="truncate">Search</span>
                     </button>
                   </div>
@@ -68,9 +66,9 @@ const Home = () => {
             {/* Card 1 */}
             <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
               <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=687&q=80" 
-                  alt="Sri Lankan businesswoman" 
+                <img
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=687&q=80"
+                  alt="Sri Lankan businesswoman"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -85,9 +83,9 @@ const Home = () => {
             {/* Card 2 */}
             <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
               <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
-                  alt="Sri Lankan IT professional" 
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+                  alt="Sri Lankan IT professional"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -102,9 +100,9 @@ const Home = () => {
             {/* Card 3 */}
             <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
               <div className="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" 
-                  alt="Group of Sri Lankan students" 
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                  alt="Group of Sri Lankan students"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -130,16 +128,12 @@ const Home = () => {
               <div className="flex justify-center">
                 <div className="flex flex-1 gap-3 flex-wrap max-w-[480px] justify-center">
                   <Link to="/courses">
-                    <button
-                      className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow"
-                    >
+                    <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow">
                       <span className="truncate">Explore Courses</span>
                     </button>
                   </Link>
                   <Link to="/careers">
-                    <button
-                      className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow"
-                    >
+                    <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow">
                       <span className="truncate">Discover Careers</span>
                     </button>
                   </Link>
@@ -148,7 +142,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   );

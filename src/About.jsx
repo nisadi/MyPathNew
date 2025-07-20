@@ -1,5 +1,4 @@
 import React from 'react';
-import Nisadi from './assets/Nisadi.jpg';
 import FeatureCard from './components/FeatureCard';
 import TeamMember from './components/TeamMember';
 import SuccessStory from './components/SuccessStory';
@@ -81,7 +80,7 @@ function About() {
                   role="Head of Career Services"
                 />
                 <TeamMember
-                  image={Nisadi}
+                  image="https://lh3.googleusercontent.com/aida-public/AB6AXuBGNKnF3EWWYYf0XF7b5nEyeaynv22AIYKP4cs99qhBuE4KHrGjOcZZ92MIfCbOg9zOrslId33_HUvauOhUCdgPCYPAVyxEwAEUa0aSMcMPjwV7ZIIws2jLpU0NChalNoicGytcMX_Bhz2vhgMhOXF7HEl1vcrT7sg3GB57YAoPV5tNa5-E_39CcNP3kMR2RThPEzh_1Kq67W0u-5r7LKNCW56fFSP37ooeg1Ia5u-GHplab9cUvYki1qomg9uWY_oQtXV8O7sPG1dJ"
                   name="Nisadi Wijerathna"
                   role="Lead Skills Development"
                 />
