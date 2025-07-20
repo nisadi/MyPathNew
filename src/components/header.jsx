@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/logo.jpg';
 import { Search } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Header() {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      // You can implement your search logic here.
+      // For example, navigate to a search results page:
+      navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b border-solid border-amber-50 px-10 py-3 w-full bg-blue-50">
@@ -33,20 +47,22 @@ function Header() {
         </div>
       </div>
 
-      <div className="flex flex-1 justify-end gap-5">
+      <div className="flex flex-1 justify-end gap-5 items-center">
         {/* Search bar */}
-        <label>
-          <div className="flex w-full flex-1 items-stretch rounded-xl h-full">
-            <div className="text-[#00355b] flex border-none bg-[#e7eef3] items-center justify-center pl-4 rounded-l-xl border-r-0">
+        <form onSubmit={handleSearchSubmit} className="flex w-full max-w-sm">
+          <label className="flex w-full items-stretch rounded-xl h-10">
+            <div className="text-[#00355b] flex items-center justify-center pl-4 rounded-l-xl border-r-0 bg-[#e7eef3] border-none">
               <Search size={20} className="text-[#00355b]" />
             </div>
             <input
+              type="text"
               placeholder="Search"
-              className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#003564] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none h-full placeholder:text-[#4e7997] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
-              value=""
+              className="form-input flex w-full flex-1 rounded-r-xl border-none bg-[#e7eef3] px-4 text-[#003564] placeholder:text-[#4e7997] focus:outline-none"
+              value={searchTerm}
+              onChange={handleSearchChange}
             />
-          </div>
-        </label>
+          </label>
+        </form>
 
         {/* Auth buttons */}
         <div className="flex gap-5">
